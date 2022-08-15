@@ -14,5 +14,6 @@ using (IKernel kernel = new StandardKernel())
 
     hero.Display();
     hero.DisplayAttack();
+    hero.SaveFile();
 
 }
