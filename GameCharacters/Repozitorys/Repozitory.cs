@@ -20,21 +20,24 @@ namespace GameCharacters.Repozitorys
         }
 
         public Dictionary<string, string> Attack()
-        {         
+        {
+            getAttack = new Dictionary<string, string>();
 
             foreach (var hero in _hero)
             {
-                var type = hero.GetType().ToString();
+                // var type = hero.Name.ToString
+                var type = hero.Name;
                 switch (type)
                 {
-                    case "Archer":
+                    case "Лучник":
                         getAttack.Add(type, "стреляет из лука");
                         break;
 
-                    case "Infantryman":
-                        getAttack.Add(type, "Наносит удар копьем");
+                    case "Пехотинец":
+                        getAttack.Add(type, "Наносит удар мечом");
                         break;
-                    case "Spear":
+                    case "Копейщик":
+                        
                         getAttack.Add(type, "Метает копье");
                         break;
                 }
@@ -44,7 +47,7 @@ namespace GameCharacters.Repozitorys
 
         public Dictionary<string,string> GetHero()
         {
-            
+            getHero = new Dictionary<string, string>();
             foreach (var hero in _hero)
             {
                 getHero.Add(hero.Name, hero.Weapon);               
